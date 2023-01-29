@@ -5,7 +5,7 @@ import { Server } from 'socket.io';
 import { fileURLToPath, URL } from 'node:url';
 import { existsSync } from 'node:fs';
 
-const port = process.env.PORT || 3000;
+const port = 3000;
 const clientDir = fileURLToPath(new URL('./dist', import.meta.url));
 
 if (!existsSync(clientDir)) {

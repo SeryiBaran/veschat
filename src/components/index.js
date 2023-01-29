@@ -1,1 +1,1 @@
-export { default as ChatForm } from './ChatForm.vue';
+export { default as Chat } from './Chat.vue';
