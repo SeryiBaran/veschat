@@ -1,5 +1,5 @@
 <script setup>
-import ChatForm from '@/components/ChatForm.vue';
+import { ChatForm } from '@/components';
 </script>
 
 <template>
