@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, nextTick } from 'vue';
 
 import { io } from 'socket.io-client';
 
@@ -9,8 +9,12 @@ const messagesListRef = ref(null);
 
 const socket = io.connect(import.meta.env.DEV ? ':3000' : '');
 
-socket.on('chat message', msg => {
+socket.on('chat message', async msg => {
   messages.value.push(msg);
+  await nextTick();
+  if (messagesListRef.value) {
+    messagesListRef.value.scrollTo(0, messagesListRef.value.scrollHeight);
+  }
 });
 
 function sendMessage(evt) {
