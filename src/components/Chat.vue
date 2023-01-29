@@ -18,8 +18,9 @@ socket.on('chat message', async msg => {
 });
 
 function sendMessage(evt) {
-  if (inputValue.value.trim()) {
-    socket.emit('chat message', inputValue.value);
+  const trimmedValue = inputValue.value.trim();
+  if (trimmedValue) {
+    socket.emit('chat message', trimmedValue);
     inputValue.value = '';
   }
 }
