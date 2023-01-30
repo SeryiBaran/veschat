@@ -25,7 +25,7 @@ function sendMessage() {
 
 <template>
   <div
-    class="card h-96 bg-base-300 shadow-xl max-h-screen flex flex-col justify-between break-words p-4 gap-2"
+    class="card max-h-[28rem] max-w-[20rem] grow w-full bg-base-300 shadow-xl max-h-screen flex flex-col justify-between break-words p-4 gap-2 max-sm:shadow-none max-sm:rounded-none max-sm:max-h-full max-sm:max-w-full"
   >
     <ul
       class="overflow-y-auto h-full flex flex-col gap-1 scrollbar"
@@ -33,21 +33,23 @@ function sendMessage() {
     >
       <TransitionGroup name="list">
         <li
-          class="message bg-base-100 rounded px-3 py-1"
+          class="message chat chat-start"
           v-for="message in messages"
           :key="message"
         >
-          {{ message }}
+          <div class="chat-bubble">
+            {{ message }}
+          </div>
         </li>
       </TransitionGroup>
     </ul>
-    <form @submit.prevent="sendMessage" class="flex gap-2">
+    <form @submit.prevent="sendMessage" class="flex gap-2 max-sm:flex-wrap">
       <input
-        class="input input-bordered input-sm"
+        class="w-full input input-bordered sm:input-sm"
         v-model="inputValue"
         autocomplete="off"
       />
-      <button class="btn btn-sm btn-primary" :disabled="!isValid">Send</button>
+      <button class="btn sm:btn-sm btn-primary grow" :disabled="!isValid">Send</button>
     </form>
   </div>
 </template>
@@ -60,7 +62,7 @@ function sendMessage() {
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-  transform: translateY(-30px);
+  transform: translateX(-30px);
 }
 
 .list-leave-active {
