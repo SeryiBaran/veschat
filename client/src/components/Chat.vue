@@ -43,7 +43,7 @@ function sendMessage() {
         </li>
       </TransitionGroup>
     </ul>
-    <form @submit.prevent="sendMessage" class="flex gap-2 max-sm:flex-wrap">
+    <form @submit.prevent="sendMessage" class="input-group max-sm:input-group-vertical">
       <input
         class="w-full input input-bordered sm:input-sm"
         v-model="inputValue"
