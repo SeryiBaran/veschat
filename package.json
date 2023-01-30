@@ -5,9 +5,9 @@
   "author": "SeryiBaran <seryibaranminepy@yandex.ru>",
   "license": "MIT",
   "scripts": {
-    "server:start": "cd server && npm run start",
-    "client:dev": "cd client && npm run dev",
-    "client:build": "cd client && npm run build",
-    "client:preview": "cd client && npm run preview"
+    "server": "cd server && npm run start",
+    "dev": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "preview": "cd client && npm run preview"
   }
 }
