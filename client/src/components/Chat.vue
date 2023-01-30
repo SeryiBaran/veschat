@@ -25,7 +25,7 @@ function sendMessage() {
 
 <template>
   <div
-    class="card max-h-[28rem] max-w-[20rem] grow w-full bg-base-300 shadow-xl max-h-screen flex flex-col justify-between break-words p-4 gap-2 max-sm:shadow-none max-sm:rounded-none max-sm:max-h-full max-sm:max-w-full"
+    class="card max-h-[28rem] max-w-[20rem] grow w-full bg-base-300 shadow-xl flex flex-col justify-between break-words p-4 gap-2 max-sm:shadow-none max-sm:rounded-none max-sm:max-h-full max-sm:max-w-full"
   >
     <ul
       class="overflow-y-auto h-full flex flex-col gap-1 scrollbar"
