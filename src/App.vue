@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { Chat } from '@/components';
 </script>
 

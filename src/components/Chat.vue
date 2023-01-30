@@ -1,22 +1,22 @@
-<script setup>
+<script setup lang="ts">
 import { ref, nextTick, computed } from 'vue';
 
 import { io } from 'socket.io-client';
 
-const messages = ref([]);
+const messages = ref<string[]>([]);
 const inputValue = ref('');
 const isValid = computed(() => !!inputValue.value.trim());
-const messagesListRef = ref(null);
+const messagesListRef = ref<HTMLElement | null>(null);
 
-const socket = io.connect(import.meta.env.DEV ? ':3000' : '');
+const socket = io(import.meta.env.DEV ? ':3000' : '');
 
-socket.on('chat message', async msg => {
+socket.on('chat message', async (msg: string) => {
   messages.value.push(msg);
   await nextTick();
   messagesListRef.value?.scrollTo(0, messagesListRef.value?.scrollHeight);
 });
 
-function sendMessage(evt) {
+function sendMessage() {
   const trimmedValue = inputValue.value.trim();
   socket.emit('chat message', trimmedValue);
   inputValue.value = '';
