@@ -18,8 +18,10 @@ Simple Vue + Express + Socket.io chat
 
 ## Running
 
-- create `.env` in client with `VITE_SERVER_ADDR=http://localhost:<port>`
-- create `.env` in server with `PORT=<port>`
+- install dependencies in `server` and `client` with `npm i`
+
+- create `.env` in `client` with `VITE_SERVER_ADDR=http://localhost:<port>`
+- create `.env` in `server` with `PORT=<port>`
 
 - `npm run server`
 - `npm run dev`
