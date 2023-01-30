@@ -8,7 +8,7 @@ const inputValue = ref('');
 const isValid = computed(() => !!inputValue.value.trim());
 const messagesListRef = ref<HTMLElement | null>(null);
 
-const socket = io(import.meta.env.DEV ? ':3000' : '');
+const socket = io(import.meta.env.VITE_SERVER_ADDR);
 
 socket.on('chat message', async (msg: string) => {
   messages.value.push(msg);

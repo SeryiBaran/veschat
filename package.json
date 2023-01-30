@@ -1,33 +1,13 @@
 {
   "name": "veschat",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
+  "version": "1.0.0",
+  "repository": "git@github.com:SeryiBaran/veschat.git",
+  "author": "SeryiBaran <seryibaranminepy@yandex.ru>",
+  "license": "MIT",
   "scripts": {
-    "start": "node server.js",
-    "dev": "vite",
-    "build": "run-p type-check build-only",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit"
-  },
-  "dependencies": {
-    "daisyui": "^2.49.0",
-    "express": "^4.18.2",
-    "socket.io": "^4.5.4",
-    "socket.io-client": "^4.5.4",
-    "vue": "^3.2.45"
-  },
-  "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vue/tsconfig": "^0.1.3",
-    "autoprefixer": "^10.4.13",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4",
-    "typescript": "^4.9.4",
-    "vite": "^4.0.0",
-    "vue-tsc": "^1.0.24"
+    "server:start": "cd server && npm run start",
+    "client:dev": "cd client && npm run dev",
+    "client:build": "cd client && npm run build",
+    "client:preview": "cd client && npm run preview"
   }
 }

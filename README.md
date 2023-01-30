@@ -17,4 +17,9 @@ Simple Vue + Express + Socket.io chat
 - [Prettier](https://prettier.io/)
 
 ## Running
-`npm run build` and `npm start`
+
+- create `.env` in client with `VITE_SERVER_ADDR=http://localhost:<port>`
+- create `.env` in server with `PORT=<port>`
+
+- `npm run dev` in client
+- `npm start` in server
