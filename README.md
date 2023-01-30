@@ -4,9 +4,12 @@ Simple Vue + Express + Socket.io chat
 
 ## Technologies:
 
+- [Tailwind.css](https://tailwindcss.com/)
+- [daisyUI](https://daisyui.com/)
 - [Vue.js](https://vuejs.org/)
 - [Socket.io](https://socket.io/)
 - [Express](https://expressjs.com/)
+- [Typescript](https://www.typescriptlang.org/)
 
 ## Tools:
 
