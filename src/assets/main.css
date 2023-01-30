@@ -1,6 +1,6 @@
-* {
-  outline: none;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .scrollbar::-webkit-scrollbar {
   @apply w-1;

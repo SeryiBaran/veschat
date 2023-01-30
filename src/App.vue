@@ -3,7 +3,7 @@ import { Chat } from '@/components';
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col justify-center items-center bg-gray-900 text-white">
+  <div class="min-h-screen flex flex-col justify-center items-center">
     <Chat />
   </div>
 </template>
