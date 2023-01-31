@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-button,
-checkbox {
+button {
   @apply focus:ring;
 }
 
