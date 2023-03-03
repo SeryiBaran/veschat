@@ -2,7 +2,7 @@
 
 Simple Vue + Express + Socket.io chat
 
-## Technologies:
+## Технологии:
 
 - [Tailwind.css](https://tailwindcss.com/)
 - [daisyUI](https://daisyui.com/)
@@ -11,17 +11,10 @@ Simple Vue + Express + Socket.io chat
 - [Express](https://expressjs.com/)
 - [Typescript](https://www.typescriptlang.org/)
 
-## Tools:
+## Запуск
 
-- [Vite.js](https://vitejs.dev/)
-- [Prettier](https://prettier.io/)
-
-## Running
-
-- install dependencies in `server` and `client` with `npm i`
-
-- create `.env` in `client` with `VITE_SERVER_ADDR=http://localhost:<port>`
-- create `.env` in `server` with `PORT=<port>`
-
-- `npm run server`
-- `npm run dev`
+- установите зависимости в `server` и `client` с помощью `npm i`
+- создайте `.env` в `client` с `VITE_SERVER_ADDR=http://localhost:<port>`
+- создайте `.env` в `server` с `PORT=<port>`
+- запустите `npm run server`
+- запустите `npm run dev`
