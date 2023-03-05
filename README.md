@@ -1,6 +1,6 @@
 # veschat
 
-Simple Vue + Express + Socket.io chat
+Простой чатик.
 
 ## Технологии:
 
@@ -9,7 +9,7 @@ Simple Vue + Express + Socket.io chat
 - [Vue.js](https://vuejs.org/)
 - [Socket.io](https://socket.io/)
 - [Express](https://expressjs.com/)
-- [Sequelize](https://sequelize.org)
+- [Prisma](https://www.prisma.io/)
 - [Typescript](https://www.typescriptlang.org/)
 
 ## Запуск
