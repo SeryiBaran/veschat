@@ -4,6 +4,7 @@ import { Server } from 'socket.io';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
 import { prisma } from './lib';
+import { messagesRouter } from './routes/messages.router';
 
 async function main() {
   dotenv.config();
@@ -15,10 +16,7 @@ async function main() {
 
   app.use(cors());
 
-  app.get('/messages', async (req, res) => {
-    const messages = await prisma.message.findMany();
-    res.status(200).send({ messages });
-  });
+  app.use('/messages', messagesRouter);
 
   const io = new Server(httpServer, {
     cors: { origin: /localhost:*/, methods: ['GET', 'POST'] },

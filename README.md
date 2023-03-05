@@ -17,5 +17,6 @@
 - установите зависимости в `server` и `client` с помощью `npm i`
 - создайте `.env` в `client` по шаблону `.env.example`
 - создайте `.env` в `server` по шаблону `.env.example`
+- сгенерируйте БД с помощью `npx prisma migrate dev`
 - запустите `npm run server`
 - запустите `npm run dev`
