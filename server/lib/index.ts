@@ -1,6 +1,3 @@
-import { Sequelize } from 'sequelize';
+import { PrismaClient } from '@prisma/client';
 
-export const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: './messages.sqlite',
-});
+export const prisma = new PrismaClient();
