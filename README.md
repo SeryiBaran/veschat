@@ -15,7 +15,7 @@ Simple Vue + Express + Socket.io chat
 ## Запуск
 
 - установите зависимости в `server` и `client` с помощью `npm i`
-- создайте `.env` в `client` с `VITE_SERVER_ADDR=http://localhost:<port>`
-- создайте `.env` в `server` с `PORT=<port>`
+- создайте `.env` в `client` по шаблону `.env.example`
+- создайте `.env` в `server` по шаблону `.env.example`
 - запустите `npm run server`
 - запустите `npm run dev`
