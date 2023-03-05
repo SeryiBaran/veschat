@@ -29,5 +29,6 @@ coverage
 
 .env
 *.sqlite
+*.db
 yarn.lock
 package-lock.json
