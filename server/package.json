@@ -4,7 +4,11 @@
     "start": "ts-node index.ts"
   },
   "dependencies": {
-    "socket.io": "^4.5.4"
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "sequelize": "^6.29.0",
+    "socket.io": "^4.5.4",
+    "sqlite3": "^5.1.4"
   },
   "devDependencies": {
     "dotenv": "^16.0.3",

@@ -9,6 +9,7 @@ Simple Vue + Express + Socket.io chat
 - [Vue.js](https://vuejs.org/)
 - [Socket.io](https://socket.io/)
 - [Express](https://expressjs.com/)
+- [Sequelize](https://sequelize.org)
 - [Typescript](https://www.typescriptlang.org/)
 
 ## Запуск
