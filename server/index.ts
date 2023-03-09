@@ -3,12 +3,13 @@ import express from 'express';
 import { Server } from 'socket.io';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
-import { prisma } from './lib';
+import { AppDataSource } from './lib';
+import { messagesApi } from './api';
 import { messagesRouter } from './routes/messages.router';
 
-async function main() {
-  dotenv.config();
+dotenv.config();
 
+async function main() {
   const port = process.env.PORT || 3000;
 
   const app = express();
@@ -19,14 +20,15 @@ async function main() {
   app.use('/messages', messagesRouter);
 
   const io = new Server(httpServer, {
-    cors: { origin: /localhost:*/, methods: ['GET', 'POST'] },
+    cors: {
+      origin: new RegExp(process.env.CORS_REGEX),
+      methods: ['GET', 'POST'],
+    },
   });
 
   io.on('connection', async socket => {
-    socket.on('create chat message', async msg => {
-      const newMessage = await prisma.message.create({
-        data: { content: msg },
-      });
+    socket.on('create chat message', async content => {
+      const newMessage = await messagesApi.create(content);
       io.emit('new chat message', newMessage);
     });
   });
@@ -36,12 +38,9 @@ async function main() {
   });
 }
 
-main()
-  .then(async () => {
-    await prisma.$disconnect();
-  })
+AppDataSource.initialize()
+  .then(main)
   .catch(async e => {
     console.error(e);
-    await prisma.$disconnect();
     process.exit(1);
   });
