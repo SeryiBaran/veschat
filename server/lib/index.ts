@@ -10,5 +10,3 @@ export const AppDataSource = new DataSource({
   migrations: [],
   subscribers: [],
 });
-
-export const messagesRepository = AppDataSource.getRepository(Message);

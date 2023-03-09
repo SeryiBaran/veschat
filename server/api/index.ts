@@ -1,15 +1,14 @@
-import { AppDataSource, messagesRepository } from '../lib';
+import { AppDataSource } from '../lib';
 import { Message } from '../entities';
 
 export const messagesApi = {
   async getAll() {
-    console.log(await messagesRepository.find())
-    return messagesRepository.find();
+    return Message.find();
   },
   async create(content) {
     const message = new Message();
     message.content = content;
-    await messagesRepository.save(message);
+    await message.save();
     return message;
   },
 };
