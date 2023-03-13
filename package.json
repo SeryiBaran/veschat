@@ -5,9 +5,15 @@
   "author": "SeryiBaran <seryibaranminepy@yandex.ru>",
   "license": "MIT",
   "scripts": {
-    "server": "cd server && npm run start",
-    "dev": "cd client && npm run dev",
-    "build": "cd client && npm run build",
-    "preview": "cd client && npm run preview"
+    "dev": "run-p dev:*",
+    "dev:server": "npm -w server run dev",
+    "dev:client": "npm -w client run dev"
+  },
+  "workspaces": [
+    "./server",
+    "./client"
+  ],
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }
