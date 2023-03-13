@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import { ref, nextTick, computed } from 'vue';
 import { io } from 'socket.io-client';
+import Card from 'primevue/card';
+import ScrollPanel from 'primevue/scrollpanel';
+import InputText from 'primevue/inputtext';
+import Button from 'primevue/button';
 
 type Message = {
   id: number;
   content: string;
-}
+};
 
 const messages = ref<Message[]>([]);
 const inputValue = ref('');
@@ -31,7 +35,7 @@ fetch(import.meta.env.VITE_SERVER_ADDR + '/messages')
 
 const socket = io(import.meta.env.VITE_SERVER_ADDR);
 
-socket.on('new chat message', async (msg) => {
+socket.on('new chat message', async msg => {
   messages.value.push(msg);
   await scrollToBottom();
 });
@@ -44,42 +48,45 @@ function sendMessage() {
 </script>
 
 <template>
-  <div
-    class="card max-h-[28rem] max-w-[20rem] grow w-full bg-base-300 shadow-xl flex flex-col justify-between break-words p-4 gap-2 max-sm:shadow-none max-sm:rounded-none max-sm:max-h-full max-sm:max-w-full"
-  >
-    <ul
-      class="overflow-y-auto h-full flex flex-col gap-1 scrollbar"
-      ref="messagesListRef"
-    >
-      <TransitionGroup name="list" v-if="!isLoading">
-        <li
-          class="message chat chat-start"
-          v-for="message in messages"
-          :key="message.id"
-        >
-          <div class="chat-bubble">
-            {{ message.content }}
-          </div>
-        </li>
-      </TransitionGroup>
-    </ul>
-    <form
-      @submit.prevent="sendMessage"
-      class="input-group max-sm:input-group-vertical"
-    >
-      <input
-        class="w-full input input-bordered sm:input-sm"
-        v-model="inputValue"
-        autocomplete="off"
-      />
-      <button class="btn sm:btn-sm btn-primary grow" :disabled="!isValid">
-        Send
-      </button>
-    </form>
-  </div>
+  <Card>
+    <template #content>
+      <div class="card">
+        <ScrollPanel style="height100px">
+          <ul class="list" ref="messagesListRef">
+            <TransitionGroup name="list" v-if="!isLoading">
+              <li class="message" v-for="message in messages" :key="message.id">
+                <div class="chat-bubble">
+                  {{ message.content }}
+                </div>
+              </li>
+            </TransitionGroup>
+          </ul>
+        </ScrollPanel>
+        <form @submit.prevent="sendMessage" class="p-inputgroup">
+          <InputText v-model="inputValue" autocomplete="off" />
+          <Button type="submit" :disabled="!isValid">Send</Button>
+        </form>
+      </div>
+    </template>
+  </Card>
 </template>
 
 <style scoped>
+.card {
+  max-height: 28rem;
+  display: flex;
+  flex-direction: column;
+  word-break: break-all;
+}
+
+.list {
+  overflow-y: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .message {
   transition: all 0.2s ease;
 }
